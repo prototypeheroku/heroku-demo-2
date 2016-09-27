@@ -12,7 +12,7 @@ steps:
         - npm test
         - echo $(date)
 
-  deploy:
+ deploy:
        image: verchol/heroku:demo
        fail-fast: false
        working-directory : ${{initial-clone}}

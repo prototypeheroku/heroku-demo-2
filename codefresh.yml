@@ -18,4 +18,5 @@ steps:
        working-directory : ${{initial-clone}}
        commands:
          - heroku status
+         - heroku git:remote -a  raziel-demo
          - git push heroku master

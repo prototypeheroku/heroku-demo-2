@@ -1,0 +1,17 @@
+version: '2'
+services:
+  test:
+    image: 'verchol/hippo-server:develop'
+    environment:
+      - 'DATABASE_URL=postgres://postgres:@db:5432/database'
+      - NODE_ENV=test
+      - POSTGRES_DB='database'
+    volumes:
+       - ./:/pclient
+
+    ports:
+      - 3000
+    links:
+      - db:db
+  db:
+    image: postgres

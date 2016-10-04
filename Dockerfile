@@ -13,5 +13,8 @@ RUN \
   /usr/local/heroku/bin/heroku --version
 
 ENV PATH $PATH:/usr/local/heroku/bin
-
+RUN touch /root/.netrc
+RUN echo 'machine api.heroku.com \n \
+  login verchol@gmail.com\n \
+  password CF_PASSWORD' >  /root/.netrc
 #ENTRYPOINT ["heroku"]

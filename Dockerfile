@@ -14,7 +14,9 @@ RUN \
 
 ENV PATH $PATH:/usr/local/heroku/bin
 RUN touch /root/.netrc
-RUN echo 'machine api.heroku.com \n \
+RUN echo 'machine git.heroku.com \n \
   login verchol@gmail.com\n \
   password CF_PASSWORD' >  /root/.netrc
+
+RUN chmod 0600 /root/.netrc
 #ENTRYPOINT ["heroku"]
